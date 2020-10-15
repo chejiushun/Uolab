@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yckj.uol.dao.MemberMapper">
+    <!--动态分页查询按：按姓名、院系、专业、班级、年级组合查询用户信息-->
+    <select id="selectCombination"  resultType="Member">
+        SELECT  * FROM  t_member
+        <where>
+            <if test="item != null ">
+                <!--where标签的作用，根据需要去查询 看是否需要加入where及以下的条件 -->
+                <if test="item.mem_name!=null and item.mem_name!=''">
+                    mem_name=#{item.mem_name}
+                </if>
+                <if test="item.mem_dep!=null and item.mem_dep!=''">
+                    OR mem_dep=#{item.mem_dep}
+                </if>
+                <if test="item.mem_major!=null and item.mem_major!=''">
+                    OR mem_major=#{item.mem_major}
+                </if>
+                <if test="item.mem_class!=null and item.mem_class!=''">
+                    OR mem_class=#{item.mem_class}
+                </if>
+                <if test="item.mem_grade!=null and item.mem_grade!=''">
+                    OR mem_grade=#{item.mem_grade}
+                </if>
+                <if test="item.mem_tel!=null and item.mem_tel!=''">
+                    OR mem_tel=#{item.mem_tel}
+                </if>
+                <if test="item.mem_duty!=null and item.mem_duty!=''">
+                    OR mem_duty=#{item.mem_duty}
+                </if>
+                <if test="item.mem_state!=null and item.mem_state!=''">
+                    OR mem_state=#{item.mem_state}
+                </if>
+            </if>
+        </where>
+        ORDER BY ${pageBean.order} ${pageBean.sort} LIMIT #{pageBean.pageOffset},#{pageBean.pageSize};
+    </select>
+
+    <!--统计查询后的总条数-->
+    <select id="selectTotalByCondition" resultType="_int">
+        SELECT COUNT(*) FROM
+        ( SELECT * FROM t_member
+        <where>
+            <if test="item != null ">
+                <!--where标签的作用，根据需要去查询 看是否需要加入where及以下的条件 -->
+                <if test="item.mem_name!=null and item.mem_name!=''">
+                    mem_name=#{item.mem_name}
+                </if>
+                <if test="item.mem_dep!=null and item.mem_dep!=''">
+                    OR mem_dep=#{item.mem_dep}
+                </if>
+                <if test="item.mem_major!=null and item.mem_major!=''">
+                    OR mem_major=#{item.mem_major}
+                </if>
+                <if test="item.mem_class!=null and item.mem_class!=''">
+                    OR mem_class=#{item.mem_class}
+                </if>
+                <if test="item.mem_grade!=null and item.mem_grade!=''">
+                    OR mem_grade=#{item.mem_grade}
+                </if>
+                <if test="item.mem_tel!=null and item.mem_tel!=''">
+                    OR mem_tel=#{item.mem_tel}
+                </if>
+                <if test="item.mem_duty!=null and item.mem_duty!=''">
+                    OR mem_duty=#{item.mem_duty}
+                </if>
+                <if test="item.mem_state!=null and item.mem_state!=''">
+                    OR mem_state=#{item.mem_state}
+                </if>
+            </if>
+        </where>
+        ) d
+    </select>
+
+    <!--通过id查询用户信息-->
+    <select id="selectByMem_id" resultType="Member">
+         SELECT * FROM t_member WHERE mem_id=#{mem_id};
+    </select>
+
+    <!--添加实验室成员信息-->
+    <insert id="insert">
+        INSERT INTO t_member(mem_id,mem_name,mem_sno,mem_sex,mem_grade,mem_nation,mem_dep,mem_major,mem_class,mem_duty,mem_date,mem_state,mem_tel,mem_sysduty,mem_remarks) VALUES (#{mem_id},#{mem_name},#{mem_sno},#{mem_sex},#{mem_grade},#{mem_nation},#{mem_dep},#{mem_major},#{mem_class},#{mem_duty},#{mem_date},#{mem_state},#{mem_tel},#{mem_sysduty},#{mem_remarks});
+    </insert>
+    <!--修改实验室成员信息-->
+    <update id="update">
+        UPDATE t_member SET mem_tel=#{mem_tel},mem_duty=#{mem_duty},mem_state=#{mem_state},mem_sysduty=#{mem_sysduty},mem_remarks=#{mem_remarks} WHERE mem_id=#{mem_id};
+    </update>
+    <!--根据实验室成员编号删除实验室成员信息-->
+    <delete id="deleteByMem_id">
+        DELETE FROM t_member WHERE mem_id=#{mem_id};
+    </delete>
+    <delete id="deleteByUser_Id">
+        DELETE FROM t_member WHERE user_id=#{user_id};
+    </delete>
+    <!-- 批量删除用户信息-->
+    <delete id="deleteBatch" parameterType="int[]">
+        DELETE FROM t_member WHERE mem_id IN
+        <!-- forEach : 用来循环
+        collection : 用来指定循环的数据的类型,可以填的值有：array,list,map ,传入的是数组，使用array
+        item : 循环中为每个循环的数据指定一个别名 index : 循环中循环的下标 open : 开始 close : 结束         separator : 数组中元素之间的分隔符
+       -->
+        <foreach collection="array" item="mem_id" open="(" separator="," close=")">
+            #{mem_id}
+        </foreach>
+    </delete>
+
+    <select id="countMemberByDept" resultType="EchartsBean">
+        SELECT value,name FROM v_member2;
+    </select>
+
+    <select id="selectDeptName" resultType="string">
+        SELECT name FROM v_member2;
+    </select>
+</mapper>

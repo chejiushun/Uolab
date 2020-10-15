@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>录入公开课</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--引入jQuery库文件-->
+    <script type="text/javascript" src="../../../js/jquery-1.11.3.js"></script>
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+    <script type="text/javascript">
+        $(function () {
+            var flag1 = false;
+            $("#title").blur(function () {
+                var username = $("#title").val();
+                if(!username || $.trim(username).length == 0 || username == ''){
+                    $("#title1").html("请填写技术专题");
+                    $("#title1").css({"color":"red","font-size":"10pt"});
+                    return;
+                }else{
+                    var pattern = /^(?=.*[a-zA-Z])[a-zA-Z ]{1,50}$/;
+                    flag1 = pattern.test(username);
+                    if(flag1){
+                        $("#title1").html("技术专题可用");
+                        $("#title1").css({"color":"green","font-size":"10pt"});
+                        return;
+                    }else{
+                        $("#title1").html("技术专题格式不正确");
+                        $("#title1").css({"color":"red","font-size":"10pt"});
+                        return;
+                    }
+                }
+            });
+            var flag1 = false;
+            $("#gpeople").blur(function () {
+                var username = $("#gpeople").val();
+                if(!username || $.trim(username).length == 0 || username == ''){
+                    $("#gpeople1").html("请填写主讲人");
+                    $("#gpeople1").css({"color":"red","font-size":"10pt"});
+                    return;
+                }else{
+                    var pattern = /^[\u4e00-\u9fa5]{2,4}$/;
+                    flag1 = pattern.test(username);
+                    if(flag1){
+                        $("#gpeople1").html("填写格式可用");
+                        $("#gpeople1").css({"color":"green","font-size":"10pt"});
+                        return;
+                    }else{
+                        $("#gpeople1").html("格式不正确");
+                        $("#gpeople1").css({"color":"red","font-size":"10pt"});
+                        return;
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="layuimini-container">
+
+    <div class="layuimini-main">
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+            <legend><strong>请输入录入的公开课信息：</strong></legend>
+        </fieldset>
+    </div>
+    <form class="layui-form" action="">
+        <div class="layui-form-item" style="margin-bottom: 5px" >
+            <div class="layui-inline" style="margin-bottom: 5px">
+            <label class="layui-form-label"><strong>日期</strong></label>
+            <div class="layui-input-block">
+                <input type="text" name="pdate" id="date1" readonly lay-verify="date1" placeholder="请选择加入日期" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        </div>
+
+        <div class="layui-form-item" style="margin-bottom: 5px" >
+            <div class="layui-inline" style="margin-bottom: 5px">
+            <label class="layui-form-label"><strong>技术专题</strong></label>
+            <div class="layui-input-block" >
+                <input type="text" name="ptitle" id="title" lay-verify="title" placeholder="请输入技术专题" autocomplete="off" class="layui-input">
+                <div id="title1" class="layui-form-mid " style="color: gray">字母和汉字组合，1-50 个字符</div>
+            </div>
+            </div>
+            </div>
+
+        <div class="layui-form-item" style="margin-bottom: 5px" >
+            <div class="layui-inline" style="margin-bottom: 5px">
+            <label class="layui-form-label"><strong>主讲人</strong></label>
+            <div class="layui-input-block">
+                <input type="text" name="ppeople" id="gpeople" lay-verify="title" placeholder="请输入主讲人" autocomplete="off" class="layui-input">
+                <div id="gpeople1" class="layui-form-mid" style="color: gray">汉字，2-4个字</div>
+            </div>
+        </div>
+        </div>
+
+        <div class="layui-form-item" style="margin-bottom: 5px" >
+            <div class="layui-inline" style="margin-bottom: 5px">
+            <label class="layui-form-label"><strong>组织人</strong></label>
+            <div class="layui-input-block">
+                <input type="text" name="porganizer" lay-verify="title" autocomplete="off" placeholder="请输入组织人" class="layui-input">
+                <div class="layui-form-mid layui-word-aux">学生和UOLab的老师，可能多个人</div>
+            </div>
+        </div>
+        </div>
+
+        <div class="layui-form-item" style="margin-bottom: 5px" >
+            <div class="layui-inline" style="margin-bottom: 5px">
+            <label class="layui-form-label"><strong>地点</strong></label>
+            <div class="layui-input-block">
+                <input type="text" name="psite" lay-verify="title"  autocomplete="off" placeholder="请输入地点" class="layui-input">
+            </div>
+        </div>
+        </div>
+
+        <div class="layui-form-item" style="margin-bottom: 5px">
+            <label class="layui-form-label"><strong>群体说明</strong></label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入群体说明内容" lay-verify="required" lay-reqtext="群体说明是必填项不能为空！！" class="layui-textarea"></textarea>
+            </div>
+        </div>
+
+        <div class="layui-form-item" style="margin-bottom: 5px" >
+            <div class="layui-inline" style="margin-bottom: 5px">
+                <label class="layui-form-label"><strong>方式</strong></label>
+                <div class="layui-input-block">
+                    <select name="pway" lay-verify="title" lay-search="">
+                        <option value="">请选择授课方式</option>
+                        <option value="1">线下</option>
+                        <option value="2">直播</option>
+                        <option value="3">录播</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item" style="margin-bottom: 5px" >
+            <div class="layui-inline" style="margin-bottom: 5px">
+                <label class="layui-form-label"><strong>创新学分值</strong></label>
+                <div class="layui-input-block">
+                    <input type="text" name="pcredit" lay-verify="title" autocomplete="off" placeholder="请输入创新学分" class="layui-input">
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item" style="margin-bottom: 5px" >
+            <div class="layui-inline" style="margin-bottom: 5px">
+                <label class="layui-form-label"><strong>参加人数</strong></label>
+                <div class="layui-input-block">
+                    <input type="text" name="pjoin" lay-verify="title" autocomplete="off" placeholder="请输入参加人数" class="layui-input">
+                </div>
+            </div>
+        </div>
+
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label"><strong>备注</strong></label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入备注内容" class="layui-textarea"></textarea>
+                </div>
+            </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function () {
+        var form = layui.form
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#year',
+            type:'year',
+            trigger:'click'
+        });
+        laydate.render({
+            elem: '#date1',
+            trigger:'click',
+            min:'2017-09-01',
+            max:'2021-06-30'
+        });
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+
+
+        //监听指定开关
+        form.on('switch(switchTest)', function (data) {
+            layer.msg('开关checked：' + (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function (data) {
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+    });
+</script>
+</body>
+</html>

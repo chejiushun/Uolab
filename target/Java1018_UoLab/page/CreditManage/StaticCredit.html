@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>学分统计</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+    <script src="../../js/lay-module/echarts/echarts.js" charset="utf-8"></script>
+    <script src="../../js/lay-module/echarts/echartsTheme.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend>学分统计</legend>
+        </fieldset>
+
+        <div class="layui-form" style="margin: 10px 10px 10px 10px">
+            <form class="layui-form layui-form-pane" action="">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">选择学院</label>
+                        <div class="layui-input-inline">
+                            <label>
+                                <select name="deptname">
+                                    <option value="">请选择院系</option>
+                                    <option value="1">机械工程学院</option>
+                                    <option value="2">材料科学与工程学院</option>
+                                    <option value="3">计算机科学与技术学院</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">年级</label>
+                        <div class="layui-input-inline" >
+                            <input type="text" name="grade" id="grade" autocomplete="off" placeholder="请选择年级" class="layui-input" readonly="readonly">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">选择专业</label>
+                        <div class="layui-input-inline" >
+                            <label for="major"></label><select name="major" id="major">
+                            <option value="">请选择专业</option>
+                            <option value="1">机械设计制造及自动化</option>
+                            <option value="2">车辆工程</option>
+                            <option value="3">机械电子工程</option>
+                            <option value="4">工业设计</option>
+                            <option value="5">材料成型及控制工程</option>
+                            <option value="6">无机非金属材料</option>
+                            <option value="7">材料物理</option>
+                            <option value="8">冶金工程</option>
+                            <option value="9">计算机科学与技术</option>
+                            <option value="10">软件工程</option>
+                            <option value="11">物联网工程</option>
+                            <option value="12">网络工程</option>
+                            <option value="13">智能科学与技术</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">事由</label>
+                        <div class="layui-input-inline" >
+                            <label>
+                                <select  name="status">
+                                    <option value="" selected="selected">--请选择--</option>
+                                    <option value="1" >国家赛</option>
+                                    <option value="2">省赛</option>
+                                    <option value="3">校赛</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <button class="layui-btn" lay-submit="" lay-filter="data-search-btn1"><i class="layui-icon layui-icon-search"></i> 搜索</button>
+                        <button type="reset" class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-refresh"></i>重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!--图表一-->
+
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+
+                <div class="layui-card-body">
+                    <div class="layui-row layui-col-space15">
+                        <div class="layui-col-md6">
+                            <div class="layui-card" style="box-shadow: 0px 0px 10px 3px gainsboro; border-radius: 20px;">
+                                <div class="layui-card-header" style="font-weight: bold; font-size: 18px;">人数统计</div>
+                                <div class="layui-card-body">
+                                    <div id="container" style="width: 100%; height: 600px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <div class="layui-card" style="box-shadow: 0px 0px 10px 3px gainsboro; border-radius: 20px;">
+                                <div class="layui-card-header" style="font-weight: bold; font-size: 18px;">学院情况统计</div>
+                                <div class="layui-card-body">
+                                    <div id="first" style="width: 100%; height: 600px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form" style="margin: 50px 10px 10px 10px">
+            <form class="layui-form layui-form-pane" action="">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">学院名称</label>
+                        <div class="layui-input-inline" >
+                            <label for="major2"></label><select name="major2" id="major2" >
+                            <option value="">请选择院系</option>
+                            <option value="1">机械工程学院</option>
+                            <option value="2">材料科学与工程学院</option>
+                            <option value="3">计算机科学与技术学院</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">时间范围</label>
+                        <div class="layui-input-inline" style="width: 230px;">
+                            <input type="text" name="daterange" id="daterange" autocomplete="off" placeholder="请选择日期范围" class="layui-input" readonly="readonly">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <button class="layui-btn" lay-submit="" lay-filter="data-search-btn2"><i class="layui-icon layui-icon-search"></i> 搜索</button>
+                        <button type="reset" class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-refresh"></i>重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div style="padding: 20px;">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-card" style="border-radius: 20px; border: 2px solid buttonface; box-shadow: 0px 0px 10px 3px gainsboro;">
+                    <div class="layui-card-header" style="font-weight: bold; font-size: 18px;">各学院人数比较</div>
+                    <div class="layui-card-body">
+                        <div id="second" style="width: 100%; height: 400px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layuimini-main">
+
+        <fieldset class="table-search-fieldset">
+            <legend>搜索信息</legend>
+            <div style="margin: 10px 10px 10px 10px">
+                <form class="layui-form layui-form-pane" action="">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">日期范围</label>
+                            <div class="layui-input-inline">
+                                <input type="text" class="layui-input" id="test6" placeholder=" - ">
+                            </div>
+
+                        </div>
+
+                        <div class="layui-inline">
+                            <button type="submit" class="layui-btn layui-btn-primary"  lay-submit lay-filter="data-search-btn"><i class="layui-icon"></i> 搜 索</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </fieldset>
+
+
+
+        <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
+
+        <!--自定义的列模板-->
+        <script type="text/html" id="statusTableBar">
+            <input type="checkbox" name="status" value="{{d.u_id}}" checked lay-skin="switch" lay-text="启用|禁用" lay-event="open" lay-filter="modifystatus" {{ d.status =='1'?'checked':''}}/>
+        </script>
+
+
+
+    </div>
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/world.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
+<script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+
+    setTimeout(function () {
+
+        option = {
+            legend: {},
+            tooltip: {
+                trigger: 'axis',
+                showContent: false
+            },
+            dataset: {
+                source: [
+                    ['product', '2015', '2016', '2017', '2018', '2019', '2020'],
+                    ['大一', 5000, 4800, 6000, 6100, 6800, 7000],
+                    ['大二', 7000, 6500, 6200, 5900, 6300, 6500],
+                    ['大三', 4500, 6400, 6200, 5700, 5900, 6200],
+                    ['大四', 4300, 5100, 4500, 5000, 5100, 4700]
+                ]
+            },
+            xAxis: {type: 'category'},
+            yAxis: {gridIndex: 0},
+            grid: {top: '55%'},
+            series: [
+                {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                {
+                    type: 'pie',
+                    id: 'pie',
+                    radius: '30%',
+                    center: ['50%', '25%'],
+                    label: {
+                        formatter: '{b}: {@2012} ({d}%)'
+                    },
+                    encode: {
+                        itemName: 'product',
+                        value: '2015',
+                        tooltip: '2015'
+                    }
+                }
+            ]
+        };
+
+        myChart.on('updateAxisPointer', function (event) {
+            var xAxisInfo = event.axesInfo[0];
+            if (xAxisInfo) {
+                var dimension = xAxisInfo.value + 1;
+                myChart.setOption({
+                    series: {
+                        id: 'pie',
+                        label: {
+                            formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+                        },
+                        encode: {
+                            value: dimension,
+                            tooltip: dimension
+                        }
+                    }
+                });
+            }
+        });
+
+
+        myChart.setOption(option);
+        // echarts 窗口缩放自适应
+        window.onresize = function(){
+            myChart.resize();
+        }
+    });
+
+
+
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+
+<script type="text/javascript">
+    var dom1 = document.getElementById("first");
+    var myChart1 = echarts.init(dom1);
+    var app = {};
+    option1 = null;
+    var weatherIcons = {
+        'Sunny':  '../../images/1.jpg',
+        'Cloudy':  '../../images/2.jpg',
+        'Showers':  '../../images/3.jpg'
+    };
+
+    option1 = {
+        title: {
+            text: '根据各院系统计学分获得人数饼图',
+            subtext: '虚构数据',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : {c} ({d}%)'
+        },
+        legend: {
+            // orient: 'vertical',
+            // top: 'middle',
+            bottom: 10,
+            left: 'center',
+            data: ['计算机科学与技术学院', '机械工程学院', '材料科学与工程学院']
+        },
+        series: [
+            {
+                name: '成员来源',
+                type: 'pie',
+                radius: '65%',
+                center: ['50%', '50%'],
+                selectedMode: 'single',
+                data: [
+                    {
+                        value: 1548,
+                        name: '计算机科学与技术学院',
+                        label: {
+                            formatter: [
+                                '{title|{b}}{abg|}',
+                                '  {weatherHead|学位}{valueHead|人数}{rateHead|占比}',
+                                '{hr|}',
+                                '  {Sunny|}{value|1000}{rate|55.3%}',
+                                '  {Cloudy|}{value|400}{rate|38.9%}',
+                                '  {Showers|}{value|121}{rate|5.8%}'
+                            ].join('\n'),
+                            backgroundColor: '#eee',
+                            borderColor: '#777',
+                            borderWidth: 1,
+                            borderRadius: 4,
+                            rich: {
+                                title: {
+                                    color: '#eee',
+                                    align: 'center'
+                                },
+                                abg: {
+                                    backgroundColor: '#333',
+                                    width: '100%',
+                                    align: 'right',
+                                    height: 25,
+                                    borderRadius: [4, 4, 0, 0]
+                                },
+                                Sunny: {
+                                    height: 30,
+                                    align: 'left',
+                                    backgroundColor: {
+                                        image: weatherIcons.Sunny
+                                    }
+                                },
+                                Cloudy: {
+                                    height: 30,
+                                    align: 'left',
+                                    backgroundColor: {
+                                        image: weatherIcons.Cloudy
+                                    }
+                                },
+                                Showers: {
+                                    height: 30,
+                                    align: 'left',
+                                    backgroundColor: {
+                                        image: weatherIcons.Showers
+                                    }
+                                },
+                                weatherHead: {
+                                    color: '#333',
+                                    height: 24,
+                                    align: 'left'
+                                },
+                                hr: {
+                                    borderColor: '#777',
+                                    width: '100%',
+                                    borderWidth: 0.5,
+                                    height: 0
+                                },
+                                value: {
+                                    width: 20,
+                                    padding: [0, 20, 0, 30],
+                                    align: 'left'
+                                },
+                                valueHead: {
+                                    color: '#333',
+                                    width: 20,
+                                    padding: [0, 20, 0, 30],
+                                    align: 'center'
+                                },
+                                rate: {
+                                    width: 40,
+                                    align: 'right',
+                                    padding: [0, 10, 0, 0]
+                                },
+                                rateHead: {
+                                    color: '#333',
+                                    width: 40,
+                                    align: 'center',
+                                    padding: [0, 10, 0, 0]
+                                }
+                            }
+                        }
+                    },
+
+                    {
+                        value: 634,
+                        name: '机械工程学院',
+                        label: {
+                            formatter: [
+                                '{title|{b}}{abg|}',
+                                '  {weatherHead|学位}{valueHead|人数}{rateHead|占比}',
+                                '{hr|}',
+                                '  {Sunny|}{value|1000}{rate|55.3%}',
+                                '  {Cloudy|}{value|400}{rate|38.9%}',
+                                '  {Showers|}{value|121}{rate|5.8%}'
+                            ].join('\n'),
+                            backgroundColor: '#eee',
+                            borderColor: '#777',
+                            borderWidth: 1,
+                            borderRadius: 4,
+                            rich: {
+                                title: {
+                                    color: '#eee',
+                                    align: 'center'
+                                },
+                                abg: {
+                                    backgroundColor: '#333',
+                                    width: '100%',
+                                    align: 'right',
+                                    height: 25,
+                                    borderRadius: [4, 4, 0, 0]
+                                },
+                                Sunny: {
+                                    height: 30,
+                                    align: 'left',
+                                    backgroundColor: {
+                                        image: weatherIcons.Sunny
+                                    }
+                                },
+                                Cloudy: {
+                                    height: 30,
+                                    align: 'left',
+                                    backgroundColor: {
+                                        image: weatherIcons.Cloudy
+                                    }
+                                },
+                                Showers: {
+                                    height: 30,
+                                    align: 'left',
+                                    backgroundColor: {
+                                        image: weatherIcons.Showers
+                                    }
+                                },
+                                weatherHead: {
+                                    color: '#333',
+                                    height: 24,
+                                    align: 'left'
+                                },
+                                hr: {
+                                    borderColor: '#777',
+                                    width: '100%',
+                                    borderWidth: 0.5,
+                                    height: 0
+                                },
+                                value: {
+                                    width: 20,
+                                    padding: [0, 20, 0, 30],
+                                    align: 'left'
+                                },
+                                valueHead: {
+                                    color: '#333',
+                                    width: 20,
+                                    padding: [0, 20, 0, 30],
+                                    align: 'center'
+                                },
+                                rate: {
+                                    width: 40,
+                                    align: 'right',
+                                    padding: [0, 10, 0, 0]
+                                },
+                                rateHead: {
+                                    color: '#333',
+                                    width: 40,
+                                    align: 'center',
+                                    padding: [0, 10, 0, 0]
+                                }
+                            }
+                        }
+                    },
+                    {
+                        value: 735,
+                        name: '材料科学与工程学院',
+                        label: {
+                            formatter: [
+                                '{title|{b}}{abg|}',
+                                '  {weatherHead|学位}{valueHead|人数}{rateHead|占比}',
+                                '{hr|}',
+                                '  {Sunny|}{value|1000}{rate|55.3%}',
+                                '  {Cloudy|}{value|400}{rate|38.9%}',
+                                '  {Showers|}{value|121}{rate|5.8%}'
+                            ].join('\n'),
+                            backgroundColor: '#eee',
+                            borderColor: '#777',
+                            borderWidth: 1,
+                            borderRadius: 4,
+                            rich: {
+                                title: {
+                                    color: '#eee',
+                                    align: 'center'
+                                },
+                                abg: {
+                                    backgroundColor: '#333',
+                                    width: '100%',
+                                    align: 'right',
+                                    height: 25,
+                                    borderRadius: [4, 4, 0, 0]
+                                },
+                                Sunny: {
+                                    height: 30,
+                                    align: 'left',
+                                    backgroundColor: {
+                                        image: weatherIcons.Sunny
+                                    }
+                                },
+                                Cloudy: {
+                                    height: 30,
+                                    align: 'left',
+                                    backgroundColor: {
+                                        image: weatherIcons.Cloudy
+                                    }
+                                },
+                                Showers: {
+                                    height: 30,
+                                    align: 'left',
+                                    backgroundColor: {
+                                        image: weatherIcons.Showers
+                                    }
+                                },
+                                weatherHead: {
+                                    color: '#333',
+                                    height: 24,
+                                    align: 'left'
+                                },
+                                hr: {
+                                    borderColor: '#777',
+                                    width: '100%',
+                                    borderWidth: 0.5,
+                                    height: 0
+                                },
+                                value: {
+                                    width: 20,
+                                    padding: [0, 20, 0, 30],
+                                    align: 'left'
+                                },
+                                valueHead: {
+                                    color: '#333',
+                                    width: 20,
+                                    padding: [0, 20, 0, 30],
+                                    align: 'center'
+                                },
+                                rate: {
+                                    width: 40,
+                                    align: 'right',
+                                    padding: [0, 10, 0, 0]
+                                },
+                                rateHead: {
+                                    color: '#333',
+                                    width: 40,
+                                    align: 'center',
+                                    padding: [0, 10, 0, 0]
+                                }
+                            }
+                        }
+                    }
+                ],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+
+    };
+
+    if (option1 && typeof option1 === "object") {
+        myChart1.setOption(option1, true);
+    }
+</script>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
+<script type="text/javascript">
+    var dom2 = document.getElementById("second");
+    var myChart2 = echarts.init(dom2);
+    var app = {};
+    option2 = null;
+    option2 = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        legend: {
+            data: ['计算机科学与技术学院', '机械工程学院', '材料科学与工程学院']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: [
+            {
+                type: 'category',
+                data: [2015, 2016, 2016,2018,2019]
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                name: '计算机科学与技术学院',
+                type: 'bar',
+                data: [320, 332, 301, 334, 390, 330, 320]
+            },
+            
+            {
+                name: '机械工程学院',
+                type: 'bar',
+                stack: '广告',
+                data: [150, 232, 201, 154, 190, 330, 410]
+            },
+            {
+                name: '材料科学与工程学院',
+                type: 'bar',
+                data: [862, 1018, 964, 1026, 1679, 1600, 1570],
+                markLine: {
+                    lineStyle: {
+                        type: 'dashed'
+                    },
+                    data: [
+                        [{type: 'min'}, {type: 'max'}]
+                    ]
+                }
+            }
+        ]
+
+    };
+    myChart2.setOption(option2);
+
+    // echarts 窗口缩放自适应
+    window.onresize = function(){
+        myChart2.resize();
+    }
+    if (option2 && typeof option2 === "object") {
+        myChart2.setOption(option2, true);
+    }
+</script>
+<script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script src="../../js/statis/statis1.js"></script>
+<script>
+    layui.use('laydate', function() {
+        var laydate = layui.laydate;
+        //日期范围
+        laydate.render({
+            elem: '#test6'
+            ,range: true
+        });
+
+    })
+    layui.use(['form', 'table'], function () {
+        var $ = layui.jquery,
+            form = layui.form,
+            table = layui.table;
+
+        table.render({
+            elem: '#currentTableId',
+            url: '../../api/score.json',
+            toolbar: '#toolbarDemo',
+            defaultToolbar: ['filter', 'exports', 'print', {
+                title: '提示',
+                layEvent: 'LAYTABLE_TIPS',
+                icon: 'layui-icon-tips'
+            }],
+            cols: [[
+                {type: "checkbox", width: 150},
+                {field: 's_sno', width: 250, title: '学号', sort: true},
+                {field: 's_name', width: 250, title: '姓名'},
+                {field: 'o_name', width: 250, title: '院系'},
+                {field: 'm_name', width: 250, title: '专业'},
+                {field: 's_score', width: 250, title: '分数', sort: true},
+                {field: 'p_name', width: 250, title: '事由', sort: true},
+            ]],
+            limits: [10, 15, 20, 25, 50, 100],
+            limit: 15,
+            page: true,
+            skin: 'line'
+        });
+
+        // 监听搜索操作
+        form.on('submit(data-search-btn)', function (data) {
+            var result = JSON.stringify(data.field);
+            layer.alert(result, {
+                title: '最终的搜索信息'
+            });
+
+            //执行搜索重载
+            table.reload('currentTableId', {
+                page: {
+                    curr: 1
+                }
+                , where: {
+                    searchParams: result
+                }
+            }, 'data');
+
+            return false;
+        });
+
+        form.on('switch(modifystatus)', function (obj) {
+            console.log(obj);
+            var param = obj.value;
+        });
+
+    })
+
+
+
+
+</script>
+
+</body>
+
+</html>

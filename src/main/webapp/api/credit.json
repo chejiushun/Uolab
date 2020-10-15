@@ -1,0 +1,97 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "creditstuname": "张三",
+      "creditsno": "201720010204",
+      "creditgrade": "2017",
+      "creditdepartment": "计算机科学与技术学院",
+      "creditscore": "96",
+      "creditpublic": "公开课1",
+      "credittime": "2017-09",
+      "credittotal": "516"
+    },
+    {
+      "creditstuname": "张三",
+      "creditsno": "201720010204",
+      "creditgrade": "2017",
+      "creditdepartment": "计算机科学与技术学院",
+      "creditscore": "96",
+      "creditpublic": "公开课1",
+      "credittime": "2017-09",
+      "credittotal": "516"
+    },
+    {
+      "creditstuname": "张三",
+      "creditsno": "201720010204",
+      "creditgrade": "2017",
+      "creditdepartment": "计算机科学与技术学院",
+      "creditscore": "96",
+      "creditpublic": "公开课1",
+      "credittime": "2017-09",
+      "credittotal": "516"
+    },
+    {
+      "creditstuname": "张三",
+      "creditsno": "201720010204",
+      "creditgrade": "2017",
+      "creditdepartment": "计算机科学与技术学院",
+      "creditscore": "96",
+      "creditpublic": "公开课1",
+      "credittime": "2017-09",
+      "credittotal": "516"
+    },
+    {
+      "creditstuname": "张三",
+      "creditsno": "201720010204",
+      "creditgrade": "2017",
+      "creditdepartment": "计算机科学与技术学院",
+      "creditscore": "96",
+      "creditpublic": "公开课1",
+      "credittime": "2017-09",
+      "credittotal": "516"
+    },
+    {
+      "creditstuname": "张三",
+      "creditsno": "201720010204",
+      "creditgrade": "2017",
+      "creditdepartment": "计算机科学与技术学院",
+      "creditscore": "96",
+      "creditpublic": "公开课1",
+      "credittime": "2017-09",
+      "credittotal": "516"
+    },
+    {
+      "creditstuname": "张三",
+      "creditsno": "201720010204",
+      "creditgrade": "2017",
+      "creditdepartment": "计算机科学与技术学院",
+      "creditscore": "96",
+      "creditpublic": "公开课1",
+      "credittime": "2017-09",
+      "credittotal": "516"
+    },
+    {
+      "creditstuname": "张三",
+      "creditsno": "201720010204",
+      "creditgrade": "2017",
+      "creditdepartment": "计算机科学与技术学院",
+      "creditscore": "96",
+      "creditpublic": "公开课1",
+      "credittime": "2017-09",
+      "credittotal": "516"
+    },
+    {
+      "creditstuname": "张三",
+      "creditsno": "201720010204",
+      "creditgrade": "2017",
+      "creditdepartment": "计算机科学与技术学院",
+      "creditscore": "96",
+      "creditpublic": "公开课1",
+      "credittime": "2017-09",
+      "credittotal": "516"
+    }
+  ]
+}

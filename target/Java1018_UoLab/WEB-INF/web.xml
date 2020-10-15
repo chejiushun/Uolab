@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+  <!--配置过滤器-->
+  <!--统一设置编码（编码过滤）-->
+  <display-name>Archetype Created Web Application</display-name>
+  <!--配置过滤器-->
+  <!--统一设置编码（编码过滤）-->
+<!--  <filter>-->
+<!--    <filter-name>EncodingFilter</filter-name>-->
+<!--    <filter-class>com.yckj.uol.filter.EncodingFilter</filter-class>-->
+<!--  </filter>-->
+<!--  <filter-mapping>-->
+<!--    <filter-name>EncodingFilter</filter-name>-->
+<!--    &lt;!&ndash;对于所有请求，都要执行EncodingFilter&ndash;&gt;-->
+<!--    <url-pattern>/*</url-pattern>-->
+<!--  </filter-mapping>-->
+<!--  &lt;!&ndash;配置登录认证过滤器&ndash;&gt;-->
+<!--  <filter>-->
+<!--    <filter-name>LoginFilter</filter-name>-->
+<!--    <filter-class>com.yckj.uol.filter.LoginFilter</filter-class>-->
+<!--    <init-param>-->
+<!--      &lt;!&ndash;登录校验过滤器不做校验即可通过的路径 &ndash;&gt;-->
+<!--      <param-name>unCheckUrl</param-name>-->
+<!--      <param-value>.js,.css,.png,.jpg,.gif,login.jsp,register.jsp,/login,/code,.woff,.ttf</param-value>-->
+<!--    </init-param>-->
+<!--  </filter>-->
+
+<!--  <filter-mapping>-->
+<!--    <filter-name>LoginFilter</filter-name>-->
+<!--    <url-pattern>/*</url-pattern>-->
+<!--    <dispatcher>FORWARD</dispatcher>-->
+<!--    <dispatcher>REQUEST</dispatcher>-->
+<!--  </filter-mapping>-->
+<!--  &lt;!&ndash;配置自动登录过滤器&ndash;&gt;-->
+<!--  <filter>-->
+<!--    <filter-name>AutoLoginFilter</filter-name>-->
+<!--    <filter-class>com.yckj.uol.filter.AutoLoginFilter</filter-class>-->
+<!--  </filter>n-->
+<!--  <filter-mapping>-->
+<!--    <filter-name>AutoLoginFilter</filter-name>-->
+<!--    <url-pattern>/*</url-pattern>-->
+<!--  </filter-mapping>-->
+
+  <session-config>
+    <session-timeout>60</session-timeout>
+  </session-config>
+</web-app>

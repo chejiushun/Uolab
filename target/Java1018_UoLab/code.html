@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码</title>
+</head>
+<body>
+ <img src="/code" title="看不清楚，换一张图片" alt="验证码" onclick="changeImg(this);"/>
+ <script type="text/javascript">
+     function  changeImg(obj) {
+         // 修改图片路径，操作src属性
+         obj.src="/code?i="+Math.random(); // 为了告诉浏览器每次发送的是新的请求
+     }
+ </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yckj.uol.dao.MatchMapper">
+    <!--参赛信息录入-->
+    <insert id="insert">
+        INSERT INTO t_match(match_id,match_kind,match_year,match_title,match_groupleader,match_groupmember,match_comgrade,match_teacher) VALUES (#{match_id},#{match_kind},#{match_year},#{match_title},#{match_groupleader},#{match_groupmember},#{match_comgrade},#{match_teacher});
+    </insert>
+
+    <!--根据用户ID删除用户信息-->
+    <delete id="deleteByMatch_id">
+        DELETE FROM t_match WHERE match_id=#{match_id};
+    </delete>
+
+    <!-- 批量删除用户信息-->
+    <delete id="deleteBatch" parameterType="int[]">
+        DELETE FROM t_match WHERE match_id IN
+        <!-- forEach : 用来循环
+        collection : 用来指定循环的数据的类型,可以填的值有：array,list,map ,传入的是数组，使用array
+        item : 循环中为每个循环的数据指定一个别名 index : 循环中循环的下标 open : 开始 close : 结束         separator : 数组中元素之间的分隔符
+       -->
+        <foreach collection="array" item="match_id" open="(" separator="," close=")">
+            #{match_id}
+        </foreach>
+    </delete>
+
+    <!--根据竞赛编号对部分参赛信息修改-->
+    <update id="updateByMatch_id">
+        UPDATE t_match SET match_groupmember=#{match_groupmember},match_comgrade=#{match_comgrade} WHERE match_id=#{match_id};
+    </update>
+
+    <!--根据用户ID修改用户信息-->
+    <update id="update">
+        UPDATE t_match
+        <set>
+            <if test="match_groupmember!=null and match_groupmember!=''">
+                match_groupmember=#{match_groupmember},
+            </if>
+            <if test="match_comgrade!=null and match_comgrade!=''">
+                match_comgrade=#{match_comgrade},
+            </if>
+        </set>
+        WHERE match_id=#{match_id};
+    </update>
+
+    <!--动态分页查询按：按姓名、院系、专业、班级、年级组合查询用户信息-->
+    <select id="selectCombination"  resultType="Match">
+        SELECT  * FROM  t_match
+        <where>
+            <if test="item != null ">
+                <!--where标签的作用，根据需要去查询 看是否需要加入where及以下的条件 -->
+                <if test="item.match_year!=null and item.match_year!=''">
+                    match_year=#{item.match_year}
+                </if>
+            </if>
+        </where>
+        ORDER BY ${pageBean.order} ${pageBean.sort} LIMIT #{pageBean.pageOffset},#{pageBean.pageSize};
+    </select>
+    <!--统计查询后的总条数-->
+    <select id="selectTotalByCondition" resultType="_int">
+        SELECT COUNT(*) FROM
+        ( SELECT * FROM t_match
+        <where>
+            <if test="item!=null">
+                <!--where标签的作用，根据需要去查询 看是否需要加入where及以下的条件 -->
+                <if test="item.match_year!=null and item.match_year!=''">
+                    match_year=#{item.match_year}
+                </if>
+            </if>
+        </where>
+        ) d
+    </select>
+    <!--通过id查询用户信息-->
+    <select id="selectByMatch_id" resultType="Match">
+         SELECT * FROM t_match WHERE match_id=#{match_id};
+    </select>
+
+</mapper>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yckj.uol.dao.UserMapper">
+    <!--动态分页查询按：按姓名、院系、专业、班级、年级组合查询用户信息-->
+    <select id="selectCombination"  resultType="User">
+            SELECT  * FROM  t_user
+            <where>
+                <if test="item != null ">
+                    <!--where标签的作用，根据需要去查询 看是否需要加入where及以下的条件 -->
+                    <if test="item.user_name!=null and item.user_name!=''">
+                       user_name=#{item.user_name}
+                    </if>
+                    <if test="item.user_dep!=null and item.user_dep!=''">
+                        OR user_dep=#{item.user_dep}
+                    </if>
+                    <if test="item.user_major!=null and item.user_major!=''">
+                        OR user_major=#{item.user_major}
+                    </if>
+                    <if test="item.user_class!=null and item.user_class!=''">
+                        OR user_class=#{item.user_class}
+                    </if>
+                    <if test="item.user_grade!=null and item.user_grade!=''">
+                        OR user_grade=#{item.user_grade}
+                    </if>
+                </if>
+        </where>
+        ORDER BY ${pageBean.order} ${pageBean.sort} LIMIT #{pageBean.pageOffset},#{pageBean.pageSize};
+    </select>
+    <!--统计查询后的总条数-->
+    <select id="selectTotalByCondition" resultType="_int">
+        SELECT COUNT(*) FROM
+        ( SELECT * FROM t_user
+        <where>
+            <if test="item!=null">
+                <!--where标签的作用，根据需要去查询 看是否需要加入where及以下的条件 -->
+                <if test="item.user_name!=null and item.user_name!=''">
+                    user_name=#{item.user_name}
+                </if>
+                <if test="item.user_dep!=null and item.user_dep!=''">
+                    OR user_dep=#{item.user_dep}
+                </if>
+                <if test="item.user_major!=null and item.user_major!=''">
+                    OR user_major=#{item.user_major}
+                </if>
+                <if test="item.user_class!=null and item.user_class!=''">
+                    OR user_class=#{item.user_class}
+                </if>
+                <if test="item.user_grade!=null and item.user_grade!=''">
+                    OR user_grade=#{item.user_grade}
+                </if>
+            </if>
+        </where>
+        ) d
+    </select>
+    <!--添加用户信息-->
+    <insert id="insert">
+        INSERT INTO t_user(user_name,user_pwd,role_id,user_state,user_realname,user_sex,user_tel,user_dep,user_grade,user_major,user_class,user_duty,user_qq,user_remarks) VALUES (#{user_name},#{user_pwd},#{role_id},#{user_state},#{user_realname},#{user_sex},#{user_tel},#{user_dep},#{user_grade},#{user_major},#{user_class},#{user_duty},#{user_qq},#{user_remarks});
+    </insert>
+    <!--根据用户ID修改用户信息-->
+    <update id="update">
+        UPDATE t_user
+        <set>
+            <if test="user_tel!=null and user_tel!=''">
+                user_tel=#{user_tel},
+            </if>
+            <if test="user_qq!=null and user_qq!=''">
+                user_qq=#{user_qq},
+            </if>
+            <if test="user_duty!=null and user_duty!=''">
+                user_duty=#{user_duty},
+            </if>
+            <if test="role_id!=null and role_id!=''">
+                role_id=#{role_id},
+            </if>
+            <if test="user_remarks!=null and user_remarks!=''">
+                user_remarks=#{user_remarks}
+            </if>
+        </set>
+        WHERE user_id=#{user_id};
+    </update>
+    <!--根据用户ID删除用户信息-->
+    <delete id="deleteByUser_id">
+        DELETE FROM t_member WHERE user_id=#{user_id};
+        DELETE FROM t_user WHERE user_id=#{user_id};
+    </delete>
+    <!-- 批量删除用户信息-->
+    <delete id="deleteBatch" parameterType="int[]">
+        DELETE FROM t_user WHERE user_id IN
+        <!-- forEach : 用来循环
+        collection : 用来指定循环的数据的类型,可以填的值有：array,list,map ,传入的是数组，使用array
+        item : 循环中为每个循环的数据指定一个别名 index : 循环中循环的下标 open : 开始 close : 结束         separator : 数组中元素之间的分隔符
+       -->
+        <foreach collection="array" item="user_id" open="(" separator="," close=")">
+            #{user_id}
+        </foreach>
+    </delete>
+    <!--通过用户名和密码查询用户信息-->
+    <select id="selectByUser_nameAndUser_pwd" resultType="User">
+         SELECT * FROM t_user WHERE user_name=#{user_name} AND user_pwd=#{user_pwd};
+    </select>
+    <!--查询所有用户信息-->
+    <select id="selectAll" resultType="User">
+        SELECT * FROM t_user
+    </select>
+    <!--通过id查询用户信息-->
+    <select id="selectByUser_id" resultType="User">
+         SELECT * FROM t_user WHERE user_id=#{user_id};
+    </select>
+    <!--分页查询-->
+    <select id="pageSelect" resultType="User">
+        <!-- SELECT * FROM t_user ORDER BY #{order} #{sort} LIMIT #{pageOffset},#{pageSize};-->
+        SELECT * FROM t_user ORDER BY ${order} ${sort} LIMIT #{pageOffset},#{pageSize};
+    </select>
+    <!--通过用户ID修改用户状态-->
+    <update id="updateStatusByUser_id">
+        UPDATE t_user SET user_state=#{user_state} WHERE user_id=#{user_id};
+    </update>
+</mapper>

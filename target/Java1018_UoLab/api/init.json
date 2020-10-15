@@ -1,0 +1,166 @@
+{
+  "homeInfo": {
+    "title": "首页",
+    "href": "page/welcome-1.jsp?t=1"
+  },
+  "logoInfo": {
+    "title": "UOLab",
+    "image": "images/logo.png",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "首页",
+      "icon": "fa fa-address-book",
+      "href": "",
+      "target": "_self",
+      "child": [
+        {
+          "title": "首页",
+          "href": "",
+          "icon": "fa fa-home",
+          "target": "_self"
+        },
+        {
+          "title": "用户管理",
+          "href": "",
+          "icon": "fa fa-user-plus",
+          "target": "_self",
+          "child": [
+            {
+              "title": "添加用户",
+              "href": "page/UserManage/addUser.jsp",
+              "icon": "fa fa-plus",
+              "target": "_self"
+            },
+            {
+              "title": "查询用户",
+              "href": "page/UserManage/selectUser.jsp",
+              "icon": "fa fa-search",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "院系管理",
+          "href": "",
+          "icon": "fa fa-graduation-cap",
+          "target": "_self",
+          "child": [
+            {
+              "title": "添加院系",
+              "href": "page/DepartmentManage/addDepartment.jsp",
+              "icon": "fa fa-plus",
+              "target": "_self"
+            },
+            {
+              "title": "添加专业",
+              "href": "page/DepartmentManage/addMajor.jsp",
+              "icon": "fa fa-plus",
+              "target": "_self"
+            },
+            {
+              "title": "添加班级",
+              "href": "page/DepartmentManage/addClass.jsp",
+              "icon": "fa fa-plus",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "成员管理",
+          "href": "",
+          "icon": "fa fa-group",
+          "target": "_self",
+          "child": [
+            {
+              "title": "添加成员",
+              "href": "page/MemberManage/addMember.jsp",
+              "icon": "fa fa-plus",
+              "target": "_self"
+            },
+            {
+              "title": "查询成员",
+              "href": "page/MemberManage/selectMember.jsp",
+              "icon": "fa fa-search",
+              "target": "_self"
+            },
+            {
+              "title": "成员统计",
+              "href": "page/MemberManage/StatisticsMember.html",
+              "icon": "fa fa-bar-chart",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "公开课管理",
+          "href": "",
+          "icon": "fa fa-calendar",
+          "target": "_self",
+          "child": [
+            {
+              "title": "录入公开课",
+              "href": "page/PublicManage/addPublic.jsp",
+              "icon": "fa fa-plus-square",
+              "target": "_self"
+            },
+            {
+              "title": "公开课查询",
+              "href": "page/PublicManage/selectPublic.jsp",
+              "icon": "fa fa-search",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "参赛管理",
+          "href": "",
+          "icon": "fa fa-flag-o",
+          "target": "_self",
+          "child": [
+            {
+              "title": "参赛信息录入",
+              "href": "page/GameManage/addGame.jsp",
+              "icon": "fa fa-plus-square",
+              "target": "_self"
+            },
+            {
+              "title": "参赛信息查询",
+              "href": "page/GameManage/selectGame.jsp",
+              "icon": "fa fa-search",
+              "target": "_self"
+            }
+          ]
+        },
+
+        {
+          "title": "创新学分管理",
+          "href": "",
+          "icon": "fa fa-laptop",
+          "target": "_self",
+          "child": [
+            {
+              "title": "录入学分",
+              "href": "page/CreditManage/addCredit.jsp",
+              "icon": "fa fa-plus-square",
+              "target": "_self"
+            },
+            {
+              "title": "学分查询",
+              "href": "page/CreditManage/SelectCredit.html",
+              "icon": "fa fa-search",
+              "target": "_self"
+            },
+            {
+              "title": "学分统计",
+              "href": "page/CreditManage/StaticCredit.html",
+              "icon": "fa fa-bar-chart",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

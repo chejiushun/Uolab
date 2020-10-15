@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yckj.uol.dao.CreditMapper">
+    <!--组合查询单个学生的创新学分记录：输入学号、姓名、时间段（年月），查询学生所有创新
+    学分记录，并显示总分数-->
+    <select id="selectCombination"  resultType="Credit">
+        SELECT  * FROM  t_credit
+        <where>
+            <!--where标签的作用，根据需要去查询 看是否需要加入where及以下的条件 -->
+            <if test="credit_sno != null and credit_sno != ''">
+                credit_sno=#{credit_sno}
+            </if>
+            <if test="credit_name != null and credit_name != ''">
+                AND credit_name=#{credit_name}
+            </if>
+            <if test="begin_time != null and begin_time != ''">
+                AND credit_gettime &gt;=${begin_time}
+            </if>
+            <if test="end_time != null and end_time != ''">
+                AND credit_gettime &lt;=${end_time}
+            </if>
+        </where>
+    </select>
+    <!--录入学分信息-->
+    <insert id="insert">
+        INSERT INTO t_credit(credit_name,credit_major,credit_sno,credit_grade,credit_dep,credit_score,credit_reason,credit_gettime,credit_remarks) VALUES (#{credit_name},#{credit_major},#{credit_sno},#{credit_grade},#{credit_dep},#{credit_score},#{credit_reason},#{credit_gettime},#{credit_remarks});
+    </insert>
+</mapper>

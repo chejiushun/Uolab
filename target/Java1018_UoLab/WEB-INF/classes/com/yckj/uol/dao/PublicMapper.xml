@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yckj.uol.dao.PublicMapper">
+    <!--根据时间段查询公开课信息-->
+    <select id="selectByPublic_time"  resultType="Publik">
+        SELECT * FROM t_public
+        <where>
+            <if test="begin_time != null and begin_time != ''">
+                  public_date &gt;=${begin_time}
+            </if>
+            <if test="end_time != null and end_time != ''">
+                AND public_date &lt;=${end_time}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectCombination" resultType="Publik">
+        SELECT * FROM t_public
+        <where>
+            <if test="item!=null">
+                <if test="#{item.begin_time}!=null and #{item.begin_time}!=''">
+                    (public_date&gt;=#{item.begin_time} AND
+                </if>
+                <if test="#{item.end_time}!=null and #{item.end_time}!=''">
+                    public_date&lt;=#{item.end_time})
+                </if>
+            </if>
+        </where>
+        ORDER BY ${page.order} ${page.sort} LIMIT #{page.pageOffset},#{page.pageSize};
+    </select>
+    <!--统计-->
+    <select id="selectTotalByCondition" resultType="_int">
+        SELECT count(*) FROM
+        (SELECT * FROM t_public
+        <where>
+            <if test="item!=null">
+                <if test="#{item.begin_time}!=null and #{item.begin_time}!=''">
+                    (public_date&gt;=#{item.begin_time} AND
+                </if>
+                <if test="#{item.end_time}!=null and #{item.end_time}!=''">
+                    public_date&lt;=#{item.end_time})
+                </if>
+            </if>
+        </where> ) d
+    </select>
+
+    <!--添加公开课信息-->
+    <insert id="insert">
+        INSERT INTO t_public(public_id,public_date,public_project,public_speaker,public_organizer,public_place,public_credit,public_people,public_group,public_classway,public_remarks) VALUES (#{public_id},#{public_date},#{public_project},#{public_speaker},#{public_organizer},#{public_place},#{public_credit},#{public_people},#{public_group},#{public_classway},#{public_remarks});
+    </insert>
+</mapper>

@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Java1018_UoLab:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="60ffbe23-c44f-4b7c-8d25-3af73a24e630" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Arquillian JUnit Test Class" />
+        <option value="HTML File" />
+        <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Jsp File" />
+        <option value="JUnit4 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gU9fLaZVR36WBwDIBFqBUNm39A" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Spring_day03" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2303665" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.yckj.uol.dao" />
+      <recent name="com.yckj.uol.service" />
+      <recent name="com.yckj.uol.service.Impl" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Practical Software\Java1018_UoLab\src\main\webapp\page" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.yckj.uol.service.Impl" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Practical Software\Java1018_UoLab\src\main\webapp\page\MemberManage" />
+      <recent name="D:\Practical Software\Java1018_UoLab\src\main\webapp\page\Statis" />
+      <recent name="D:\Practical Software\Java1018_UoLab\src\main\webapp" />
+      <recent name="D:\Practical Software\Java1018_UoLab\src\main\webapp\js" />
+      <recent name="D:\Practical Software\Java1018_UoLab\src\main\webapp\page\GameManage" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat9">
+    <configuration name="MajorMapperTest.selectByDep_id" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java1018_UoLab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yckj.uol.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yckj.uol.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.yckj.uol.dao.MajorMapperTest" />
+      <option name="METHOD_NAME" value="selectByDep_id" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemberMapperTest.insert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java1018_UoLab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yckj.uol.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yckj.uol.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.yckj.uol.dao.MemberMapperTest" />
+      <option name="METHOD_NAME" value="insert" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserMapperTest.deleteBatch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java1018_UoLab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yckj.uol.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yckj.uol.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.yckj.uol.dao.UserMapperTest" />
+      <option name="METHOD_NAME" value="deleteBatch" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserMapperTest.deleteByUser_id" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java1018_UoLab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yckj.uol.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yckj.uol.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.yckj.uol.dao.UserMapperTest" />
+      <option name="METHOD_NAME" value="deleteByUser_id" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest.deleteByUser_id" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java1018_UoLab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yckj.uol.service.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yckj.uol.service.Impl" />
+      <option name="MAIN_CLASS_NAME" value="com.yckj.uol.service.Impl.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="deleteByUser_id" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.36" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <deployment>
+        <artifact name="Java1018_UoLab:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Java1018_UoLab_2" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51085" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Java1018_UoLab:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserServiceImplTest.deleteByUser_id" />
+        <item itemvalue="JUnit.UserMapperTest.deleteByUser_id" />
+        <item itemvalue="JUnit.UserMapperTest.deleteBatch" />
+        <item itemvalue="JUnit.MajorMapperTest.selectByDep_id" />
+        <item itemvalue="JUnit.MemberMapperTest.insert" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="60ffbe23-c44f-4b7c-8d25-3af73a24e630" name="Default Changelist" comment="" />
+      <created>1598158405843</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598158405843</updated>
+      <workItem from="1598158408655" duration="656000" />
+      <workItem from="1598159184445" duration="50000" />
+      <workItem from="1598159300851" duration="16104000" />
+      <workItem from="1598230313110" duration="26478000" />
+      <workItem from="1598283191230" duration="1239000" />
+      <workItem from="1598317068602" duration="26761000" />
+      <workItem from="1598403929017" duration="18966000" />
+      <workItem from="1598491468238" duration="17871000" />
+      <workItem from="1598514730946" duration="6014000" />
+      <workItem from="1598840689555" duration="1070000" />
+      <workItem from="1598847614074" duration="1421000" />
+      <workItem from="1598859663140" duration="6951000" />
+      <workItem from="1598870352140" duration="1631000" />
+      <workItem from="1598939052087" duration="5309000" />
+      <workItem from="1598959845494" duration="1794000" />
+      <workItem from="1598968506415" duration="3554000" />
+      <workItem from="1599031908788" duration="1133000" />
+      <workItem from="1599041515366" duration="1164000" />
+      <workItem from="1599043216934" duration="2812000" />
+      <workItem from="1599057963536" duration="32000" />
+      <workItem from="1599058041112" duration="3000" />
+      <workItem from="1599110238977" duration="3531000" />
+      <workItem from="1599200216357" duration="9000" />
+      <workItem from="1599229993334" duration="779000" />
+      <workItem from="1599294845860" duration="3739000" />
+      <workItem from="1599299678823" duration="7696000" />
+      <workItem from="1599400537632" duration="14000" />
+      <workItem from="1599400761224" duration="4867000" />
+      <workItem from="1599464801147" duration="5545000" />
+      <workItem from="1599472220731" duration="3205000" />
+      <workItem from="1599551338095" duration="2484000" />
+      <workItem from="1599559927776" duration="5430000" />
+      <workItem from="1599661219964" duration="3348000" />
+      <workItem from="1599703809312" duration="3480000" />
+      <workItem from="1599710181844" duration="13137000" />
+      <workItem from="1599808528908" duration="668000" />
+      <workItem from="1599826661114" duration="7352000" />
+      <workItem from="1599974739016" duration="5241000" />
+      <workItem from="1599984543496" duration="3346000" />
+      <workItem from="1599990712430" duration="450000" />
+      <workItem from="1600006226270" duration="5394000" />
+      <workItem from="1600045831873" duration="8202000" />
+      <workItem from="1600067135422" duration="8799000" />
+      <workItem from="1600132712027" duration="6635000" />
+      <workItem from="1600146765698" duration="2706000" />
+      <workItem from="1600159309577" duration="3154000" />
+      <workItem from="1600218967541" duration="5893000" />
+      <workItem from="1600227533157" duration="8746000" />
+      <workItem from="1600307424900" duration="9970000" />
+      <workItem from="1600329103592" duration="2708000" />
+      <workItem from="1600344118770" duration="6130000" />
+      <workItem from="1600428844342" duration="8639000" />
+      <workItem from="1600499272203" duration="4259000" />
+      <workItem from="1600504374832" duration="781000" />
+      <workItem from="1600512406602" duration="5782000" />
+      <workItem from="1600518406287" duration="1338000" />
+      <workItem from="1600523787065" duration="731000" />
+      <workItem from="1600566667110" duration="1026000" />
+      <workItem from="1600567730197" duration="8797000" />
+      <workItem from="1600586892468" duration="4303000" />
+      <workItem from="1600599266186" duration="3502000" />
+      <workItem from="1600605496476" duration="982000" />
+      <workItem from="1600649299542" duration="2722000" />
+      <workItem from="1600652127326" duration="1584000" />
+      <workItem from="1600654116541" duration="4825000" />
+      <workItem from="1600669590498" duration="311000" />
+      <workItem from="1600669928342" duration="5632000" />
+      <workItem from="1600738752721" duration="5494000" />
+      <workItem from="1600757420468" duration="4951000" />
+      <workItem from="1600829159613" duration="1047000" />
+      <workItem from="1600830256114" duration="4127000" />
+      <workItem from="1600837872867" duration="855000" />
+      <workItem from="1600846758887" duration="1426000" />
+      <workItem from="1600848219236" duration="1551000" />
+      <workItem from="1600855469270" duration="979000" />
+      <workItem from="1600856481260" duration="75000" />
+      <workItem from="1600856697546" duration="575000" />
+      <workItem from="1600857436283" duration="347000" />
+      <workItem from="1600868760789" duration="895000" />
+      <workItem from="1600869835310" duration="2364000" />
+      <workItem from="1600933652327" duration="3798000" />
+      <workItem from="1600947206561" duration="26000" />
+      <workItem from="1600958413390" duration="267000" />
+      <workItem from="1601017928239" duration="2360000" />
+      <workItem from="1601020501133" duration="14000" />
+      <workItem from="1601021355890" duration="54000" />
+      <workItem from="1601022137488" duration="315000" />
+      <workItem from="1601082673066" duration="2803000" />
+      <workItem from="1601119869789" duration="272000" />
+      <workItem from="1601120347172" duration="27000" />
+      <workItem from="1601128802656" duration="3016000" />
+      <workItem from="1601168716087" duration="7259000" />
+      <workItem from="1601176034684" duration="260000" />
+      <workItem from="1601206426463" duration="1999000" />
+      <workItem from="1601208894711" duration="6320000" />
+      <workItem from="1601257266890" duration="4703000" />
+      <workItem from="1601262011231" duration="330000" />
+      <workItem from="1601280166129" duration="549000" />
+      <workItem from="1601280854556" duration="120000" />
+      <workItem from="1601360442590" duration="23000" />
+      <workItem from="1601361328867" duration="5683000" />
+      <workItem from="1601600686781" duration="66000" />
+      <workItem from="1601614173360" duration="1796000" />
+      <workItem from="1601618195896" duration="356000" />
+      <workItem from="1601624050416" duration="1339000" />
+      <workItem from="1601625419301" duration="3200000" />
+      <workItem from="1601688623603" duration="765000" />
+      <workItem from="1601689523613" duration="8059000" />
+      <workItem from="1601710374464" duration="4633000" />
+      <workItem from="1601729925630" duration="6600000" />
+      <workItem from="1601797100899" duration="336000" />
+      <workItem from="1601861851925" duration="153000" />
+      <workItem from="1601864408597" duration="3148000" />
+      <workItem from="1601869658172" duration="2135000" />
+      <workItem from="1601880914461" duration="4893000" />
+      <workItem from="1601886462482" duration="10000" />
+      <workItem from="1601966442809" duration="917000" />
+      <workItem from="1601968074817" duration="7610000" />
+      <workItem from="1601976106672" duration="131000" />
+      <workItem from="1601992395505" duration="1468000" />
+      <workItem from="1602291870173" duration="40000" />
+      <workItem from="1602406314132" duration="2321000" />
+      <workItem from="1602583199973" duration="25000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601018732669">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1601018732669" />
+    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser" timestamp="1601972348724">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1601972348724" />
+    <state x="462" y="223" width="441" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1601711018609">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="223" width="441" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1601711018609" />
+    <state x="179" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1598319825515">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="179" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1598319825515" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601260550003">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1601260550003" />
+    <state x="413" y="111" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1599725387731">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="111" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1366.728@0.0.1366.728" timestamp="1599725387731" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1602583222639">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602583222639" />
+    <state width="905" height="539" key="GridCell.Tab.0.bottom" timestamp="1602412100380">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="905" height="539" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602412100380" />
+    <state width="905" height="539" key="GridCell.Tab.0.center" timestamp="1602412100380">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="905" height="539" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602412100380" />
+    <state width="905" height="539" key="GridCell.Tab.0.left" timestamp="1602412100380">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="905" height="539" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602412100380" />
+    <state width="905" height="539" key="GridCell.Tab.0.right" timestamp="1602412100380">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="905" height="539" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602412100380" />
+    <state width="905" height="539" key="GridCell.Tab.1.bottom" timestamp="1602412100381">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="905" height="539" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602412100381" />
+    <state width="905" height="539" key="GridCell.Tab.1.center" timestamp="1602412100381">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="905" height="539" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1602412100381" />
+    <state width="905" height="539" key="GridCell.Tab.1.left" timestamp="1602412100380">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="905" height="539" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1602412100380" />
+    <state width="905" height="539" key="GridCell.Tab.1.right" timestamp="1602412100381">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="905" height="539" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1602412100381" />
+    <state width="905" height="539" key="GridCell.Tab.2.bottom" timestamp="1602412100381">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="905" height="539" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602412100381" />
+    <state width="905" height="539" key="GridCell.Tab.2.center" timestamp="1602412100381">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="905" height="539" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1602412100381" />
+    <state width="905" height="539" key="GridCell.Tab.2.left" timestamp="1602412100381">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="905" height="539" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1602412100381" />
+    <state width="905" height="539" key="GridCell.Tab.2.right" timestamp="1602412100381">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="905" height="539" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1602412100381" />
+    <state x="125" y="0" key="SettingsEditor" timestamp="1601119987474">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="125" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1601119987474" />
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1602583200007">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1602583200007" />
+    <state x="454" y="67" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1601616600486">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="454" y="67" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1601616600486" />
+    <state x="57" y="59" key="new project wizard" timestamp="1601120373645">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="57" y="59" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1601120373645" />
+    <state x="425" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1601258970717">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="425" y="0" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1601258970717" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1601259643726">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1601259643726" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1600074994423">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1600074994423" />
+  </component>
+</project>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yckj.uol.dao.MajorMapper">
+<!--添加专业信息-->
+    <insert id="insert">
+        INSERT INTO t_major(major_name,major_remarks,dep_id) VALUES(#{major_name},#{major_remarks},#{dep_id})
+    </insert>
+    <!--通过院系名查询专业信息-->
+    <select id="selectByDep_name" resultType="Major">
+         SELECT m.* FROM t_major m ,t_department d WHERE m.dep_id = d.dep_id AND d.dep_name=#{0};
+    </select>
+    <!--通过院系名查询专业信息-->
+    <select id="selectByDep_id" resultType="Major">
+         SELECT m.* FROM t_major m ,t_department d WHERE m.dep_id = d.dep_id AND d.dep_id=#{0};
+    </select>
+</mapper>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <!-- 引用数据库配置文件 -->
+  <properties resource="db.properties"></properties>
+  <!-- 配置日志输出 -->
+  <settings>
+     <!--  <setting name="logImpl" value="STDOUT_LOGGING"/>-->
+     <setting name="logImpl" value="LOG4J"/>
+
+      <!-- 开启全局二级缓存 -->
+      <setting name="cacheEnabled" value="true"/>
+
+      <!-- 打开延时加载的开关 -->
+      <setting name="lazyLoadingEnabled" value="true"/>
+      <!--  -->
+      <setting name="aggressiveLazyLoading" value="false"/>
+  </settings>
+
+  <!-- 配置别名  -->
+  <typeAliases>
+     <!-- 
+             单个取别名:
+        	type：取别名的对象
+        	alias:  别名 ；就是该类类名，首字母大小写皆可。
+     -->
+     <!--  <typeAlias type="com.yckj.mybatis.pojo.User" alias="user"/>-->
+      <!-- 批量取别名 
+    	   系统会默认给该包底下的所有类，都取好别名
+    	   别名：就是该类类名，首字母大小写皆可,一般使用首字母大写。
+    	  com.yckj.mybatis.pojo.User的别名：User或user    	
+    	-->
+     <package name="com.yckj.uol.pojo"/>
+  </typeAliases>
+  <!-- 底层的运行环境 ，配置数据源相关参数 -->
+  <environments default="development">
+    <environment id="development">
+      <!-- 事务管理器 -->
+      <transactionManager type="JDBC"/>
+      <!-- 配置数据源 -->
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+    
+     
+	      <!--配置c3p0测试环境--> 
+	      <environment id="test"> 
+	      <transactionManager type="jdbc"/> 
+	      <dataSource type="com.yckj.uol.util.C3P0DataSourceFactory">
+	      <property name="driverClass" value="${c3p0.driverClass}"/> 
+	      <property name="jdbcUrl" value="${c3p0.jdbcUrl}"/> 
+	      <property name="user" value="${c3p0.user}"/> 
+	      <property name="password" value="${c3p0.password}"/> 
+	      <property name="initialPoolSize" value="5"/> 
+	      <property name="maxPoolSize" value="20"/> 
+	      <property name="minPoolSize" value="5"/> 
+	      </dataSource>
+	      </environment>
+  </environments>
+   <!-- 配置映射器 -->
+  <mappers>
+    <!-- 配置映射文件，在mybatis-config.xml中注册映射文件 -->
+    <!--1.关联单个文件，直接给路径 -->
+    <!-- <mapper resource="com/ychs/mybatis/dao/vUserMapper.xml"/> -->
+    <!--
+    		2. 类加载：通过加载类，去加载这个映射文件 
+    		必须符合如下两个规则，才可以使用类加载： 
+    		规则1：接口和映射文件必须处在同一个包下 
+    		规则2：接口名字必须和映射文件(实现类）的名字必须一样的 
+    --> 
+    <!-- <mapper class="com.ychs.mybatis.dao.UserMapper"/> -->
+    <!-- 
+    	3.批量关联：在类加载的基础上完成，必须符合类加载的两个规则 
+    --> 
+    <package name="com.yckj.uol.dao"/>
+  </mappers>
+</configuration>
